@@ -32,3 +32,21 @@ Significa que uma instância de uma entidade pode se relacionar com nenhuma ou n
 __Exemplo:__
 Funcionários e Gerente de uma empresa: Um funcionário pode não ter um gerente ou pode ter exatamente um. Mas cada gerente tem muitos funcionários sob sua supervisão. Outros exemplos incluem Doadores e Doações. Um doador pode não ter feito nenhuma doação, assim como pode ter feito uma doação grande. Uma doação está associada a somente um doador.
 
+## Algebra Relacional em Bancos de Dados Relacionais
+### Seleção? (σ)
+Seleciona Tuplas que satisfazem determinado predicado ou condição.
+σ nome = "Davi Rodrigues" (Alunos)
+σ <nome_coluna> <condição> (nome_tabela)
+- Detalhe: O operador de Seleção é comutativo.
+
+### Projeção (Π)
+Gera nova relações excluindo alguns atributos. Operação que filtra as colunas de uma tabela. Pode-se considerá-la como uma operação unária, por operar apenas sobre um conjunto de entrada.
+Π id, nome (σ sexo = 'M') (Alunos)
+
+### União (U)
+Seleciona as Tuplas de duas relações, concatenando-as. Operação Comutativa
+Por exemplo, unindo os dados de compras e vendas	
+NFC U NFV
+
+### Interseção (∩
+...)
