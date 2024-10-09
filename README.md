@@ -26,3 +26,9 @@ __Exemplo:__
 Relacionamento entre instâncis da entidade Engenheiro e Projetos. Enquanto um Engenheiro pode estar alocado a vários Projetos diferentes, um Projeto pode ter vários Engemheiros diferentes atuando neles. Também em relacionamentos entre entidade Médico e entidade Paciente; Um paciente pode ser atendido por vários médicos enquanto um médico pode atender vários pacientes.
 
 - Tabela Associativa : Também chamada Entidade Associativa, ela ocorre em relacionamentos (N:N). Num relacionamento entre entidades da classe Aluno e entidades da classe Curso, há no meio a entidade associativa Matrícula, que tem seus próprios atributos também, se comportando como uma entidade. O que muda é sua representação.
+
+#### Zero ou Um para Muitos (0..1:N)
+Significa que uma instância de uma entidade pode se relacionar com nenhuma ou no máximo uma entidade pode se relacionar com nenhuma ou no máximo uma única instância da outra entidade, mas cada instância dessa outra entidade pode se relacionar com muitas da primeira.
+__Exemplo:__
+Funcionários e Gerente de uma empresa: Um funcionário pode não ter um gerente ou pode ter exatamente um. Mas cada gerente tem muitos funcionários sob sua supervisão. Outros exemplos incluem Doadores e Doações. Um doador pode não ter feito nenhuma doação, assim como pode ter feito uma doação grande. Uma doação está associada a somente um doador.
+
