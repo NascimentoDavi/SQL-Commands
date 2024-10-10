@@ -50,3 +50,5 @@ NFC U NFV
 
 ### Interseção (∩
 ...)
+
+## Transactions - Relational DataBase
