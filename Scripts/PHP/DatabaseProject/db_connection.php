@@ -3,14 +3,19 @@
 $server = 'localhost';
 $database = 'Default';
 $username = '';
-$password = '';
+$password  = '';
 
 $dsn = "sqlsrv:Server=$server;Database=$database";
 
 try {
+    // Create a new PDO instance
     $connection = new PDO($dsn, $username, $password);
     $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
+    // Message indicating successful connection
+    echo "Connection successfully established.\n";
+
+    // To remove the table
     $sqlDropTable = "
     IF OBJECT_ID('TestTable', 'U') IS NOT NULL
     BEGIN
@@ -19,9 +24,9 @@ try {
     ";
 
     $connection->exec($sqlDropTable);
-    echo "Tabela 'TestTable' removida com sucesso, se existia.\n";
+    echo "'TestTable' table successfully removed, if exist.\n";
 
-    // SQL para criar a tabela
+    // To create the Table
     $sqlCreateTable = "
     CREATE TABLE TestTable (
         ID INT PRIMARY KEY,
@@ -30,7 +35,7 @@ try {
     ";
 
     $connection->exec($sqlCreateTable);
-    echo "Tabela 'TestTable' criada com sucesso!\n";
+    echo "'TestTable'! table successfully created\n";
 
     $sqlInsert = "INSERT INTO TestTable (ID, Name) VALUES (?, ?)";
     $stmt = $connection->prepare($sqlInsert);
@@ -45,9 +50,7 @@ try {
     }
 
 } catch (PDOException $e) {
-    echo "Erro: " . $e->getMessage();
+    echo "Error: " . $e->getMessage();
 } finally {
     $connection = null;
 }
-
-?>
